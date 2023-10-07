@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class Produto {
+    String nome;
+    int quantidade;
+
+    Produto(String nome, int quantidade) {
+        this.nome = nome;
+        this.quantidade = quantidade;
+    }
+
+    void exibirInformacoes() {
+        System.out.println("Nome do Produto: " + nome);
+        System.out.println("Quantidade em Estoque: " + quantidade);
+    }
+
+    void adicionarQuantidade(int quantidade) {
+        this.quantidade += quantidade;
+        System.out.println(quantidade + " unidades adicionadas ao estoque.");
+    }
+
+    void retirarQuantidade(int quantidade) {
+        if (quantidade <= this.quantidade) {
+            this.quantidade -= quantidade;
+            System.out.println(quantidade + " unidades retiradas do estoque.");
+        } else {
+            System.out.println("Quantidade insuficiente em estoque.");
+        }
+    }
+}
